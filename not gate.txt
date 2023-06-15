@@ -1,0 +1,24 @@
+notgate contains 
+1 input 1 output
+A Y
+1 0
+0 1
+RTL CODE
+MODULE NOTGATE(A,Y);
+INPUT A;
+OUTPUT Y;
+ASSIGN Y=!A;
+ENDMODULE
+TESTBENCH
+MODULE NOTGATE_TB
+WIRE t_y;
+reg t_a;
+noatgate my_gate (.a(t_a),.y(t_y));
+intial
+begin
+$monitor(t_a,t_y);
+t_a=1'b0;
+#5
+t_a=1'b1;
+end
+endmodule
